@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>单词训练</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="单词">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#7c3aed">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  :root {
+    --primary: #7c3aed; --primary-d: #6d28d9; --bg: #f5f3ff; --ink: #1f2937;
+    --muted: #6b7280; --line: #e9d5ff; --wrong: #ef4444; --right: #22c55e;
+    --card: #ffffff;
+  }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg); color: var(--ink);
+    display: flex; justify-content: center; align-items: stretch;
+    min-height: 100vh; min-height: 100dvh; touch-action: manipulation;
+  }
+  #app {
+    width: 100%; max-width: 480px; background: #fff;
+    display: flex; flex-direction: column;
+    min-height: 100vh; min-height: 100dvh;
+    padding: calc(12px + env(safe-area-inset-top)) 16px calc(12px + env(safe-area-inset-bottom));
+  }
+  .view { display: flex; flex-direction: column; flex: 1; }
+  [hidden] { display: none !important; }
+  h1 { font-size: 28px; text-align: center; color: var(--primary-d); margin: 16px 0 4px; }
+  .sub { text-align: center; color: var(--muted); font-size: 13px; margin-bottom: 18px; }
+
+  /* difficulty buttons */
+  .levels { display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
+  .level-btn {
+    border: 2px solid var(--primary); background: var(--primary); color: #fff;
+    border-radius: 16px; padding: 18px; font-size: 20px; font-weight: 700;
+    cursor: pointer; transition: transform .05s; text-align: center;
+  }
+  .level-btn .n { display: block; font-size: 13px; font-weight: 400; opacity: .9; margin-top: 4px; }
+  .level-btn:active { transform: scale(.97); background: var(--primary-d); }
+
+  .btn {
+    border: none; background: var(--primary); color: #fff; border-radius: 14px;
+    padding: 16px; font-size: 19px; font-weight: 700; cursor: pointer; width: 100%;
+    touch-action: manipulation;
+  }
+  .btn:active { background: var(--primary-d); }
+  .btn.secondary { background: #fff; color: var(--primary-d); border: 2px solid var(--primary); }
+  .btn.danger { background: #fff; color: var(--wrong); border: 2px solid var(--wrong); }
+  .btn.danger:active { background: #fef2f2; }
+  .link { background: none; border: none; color: var(--muted); font-size: 15px; cursor: pointer; padding: 12px; }
+  .spacer { flex: 1; }
+
+  /* history */
+  .hist { margin-top: 26px; border-top: 1px solid var(--line); padding-top: 14px; }
+  .hist h3 { font-size: 15px; color: var(--muted); margin: 0 0 8px; display: flex; justify-content: space-between; align-items: center; }
+  .hist-row { font-size: 14px; padding: 6px 0; color: var(--ink); border-bottom: 1px dashed var(--line); }
+  .hist-empty { font-size: 13px; color: var(--muted); }
+  .clear { font-size: 13px; color: var(--wrong); background: none; border: none; cursor: pointer; margin-top: 4px; padding: 4px 0; }
+
+  /* quiz */
+  .topbar { display: flex; justify-content: space-between; font-size: 16px; font-weight: 700; color: var(--primary-d); padding: 4px 2px; }
+  .topbar .time.warn { color: var(--wrong); }
+  .quiz-body { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+  .word-row { display: flex; align-items: center; gap: 10px; }
+  .word-display { font-size: 56px; font-weight: 700; line-height: 1; text-align: center; color: var(--ink); }
+  .speak-btn {
+    width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--line);
+    background: #fff; font-size: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    touch-action: manipulation; flex-shrink: 0;
+  }
+  .speak-btn:active { background: #f5f3ff; border-color: var(--primary); }
+  .phonetic { font-size: 18px; color: var(--muted); min-height: 24px; text-align: center; }
+  .options { display: flex; flex-direction: column; gap: 12px; width: 100%; padding: 0 8px; }
+  .opt-btn {
+    border: 2px solid var(--line); background: #fff; color: var(--ink);
+    border-radius: 14px; padding: 16px 18px; font-size: 18px; font-weight: 600;
+    cursor: pointer; touch-action: manipulation; text-align: center;
+    transition: background .08s, border-color .08s;
+  }
+  .opt-btn:active { background: #f5f3ff; border-color: var(--primary); }
+
+  /* result */
+  .result-box { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
+  .result-box .big { font-size: 26px; font-weight: 700; }
+  .result-box .big.ok { color: var(--right); }
+  .result-box .stat { font-size: 19px; }
+  .result-actions { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; width: 100%; padding: 0 16px; }
+
+  /* review */
+  .rv-header { display: flex; justify-content: space-between; font-size: 15px; font-weight: 600; color: var(--primary-d); padding: 4px 2px; }
+  .rv-feedback { min-height: 28px; font-size: 16px; font-weight: 600; text-align: center; }
+
+  @media (min-height: 800px) {
+    body { align-items: center; padding: 24px 0; }
+    #app { min-height: 0; height: min(760px, calc(100dvh - 48px)); border-radius: 24px;
+           box-shadow: 0 10px 40px rgba(0,0,0,.08); overflow-y: auto; }
+    .word-display { font-size: 64px; }
+  }
+</style>
+</head>
+<body>
+<div id="app">
+
+  <!-- View 1: difficulty select -->
+  <div id="view-select" class="view">
+    <h1>单词训练</h1>
+    <div class="sub">选择难度 · 每次 20 题</div>
+    <div class="levels" id="levels"></div>
+    <div class="hist" id="hist">
+      <h3><span>历史记录</span></h3>
+      <div id="hist-list"></div>
+      <button class="clear" id="clear-btn" hidden>清除记录</button>
+    </div>
+  </div>
+
+  <!-- View 2: ready -->
+  <div id="view-ready" class="view" hidden>
+    <div class="spacer"></div>
+    <h1 id="ready-name">难度</h1>
+    <div class="sub">20 道题 · 限时 10 分钟</div>
+    <button class="btn" id="start-btn">开始测试</button>
+    <button class="link" id="ready-back">返回</button>
+    <div class="spacer"></div>
+  </div>
+
+  <!-- View 3: quiz -->
+  <div id="view-quiz" class="view" hidden>
+    <div class="topbar">
+      <span class="time" id="q-time">10:00</span>
+      <span id="q-progress">第 1 / 20 题</span>
+    </div>
+    <div class="quiz-body">
+      <div class="word-row">
+        <div class="word-display" id="q-word">word</div>
+        <button class="speak-btn" id="q-speak" title="朗读">🔊</button>
+      </div>
+      <div class="phonetic" id="q-phonetic"></div>
+      <div class="sub">选择正确的中文释义</div>
+      <div class="options" id="q-options"></div>
+    </div>
+  </div>
+
+  <!-- View 4: result -->
+  <div id="view-result" class="view" hidden>
+    <div class="result-box">
+      <div class="big" id="r-done">完成 0 / 20</div>
+      <div class="stat" style="color:var(--right)">正确 <b id="r-ok">0</b> 题</div>
+      <div class="stat" style="color:var(--wrong)">错误 <b id="r-bad">0</b> 题</div>
+      <div class="stat">用时 <b id="r-time">0:00</b></div>
+      <div class="result-actions">
+        <button class="btn" id="r-review" hidden>订正错题</button>
+        <button class="btn secondary" id="r-home">回到难度选择</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- View 5: review -->
+  <div id="view-review" class="view" hidden>
+    <div class="rv-header">
+      <span>订正模式</span>
+      <span id="rv-progress">订正 1 / 1</span>
+    </div>
+    <div class="quiz-body">
+      <div class="word-row">
+        <div class="word-display" id="rv-word">word</div>
+        <button class="speak-btn" id="rv-speak" title="朗读">🔊</button>
+      </div>
+      <div class="phonetic" id="rv-phonetic"></div>
+      <div class="sub">选择正确的中文释义</div>
+      <div class="options" id="rv-options"></div>
+      <div class="rv-feedback" id="rv-fb"></div>
+    </div>
+  </div>
+
+</div>
+
+<script src="words-data.js"></script>
+<script>
+"use strict";
+(function () {
+  var DB = window.WORD_DB || { l1: [], l2: [], l3: [] };
+  var LEVEL_INFO = [
+    { key: 'l1', name: '小学低年级', desc: '1-3年级', count: DB.l1.length + '词' },
+    { key: 'l2', name: '小学高年级', desc: '4-6年级', count: DB.l2.length + '词' },
+    { key: 'l3', name: '初中', desc: '7-9年级', count: DB.l3.length + '词' },
+  ];
+  var TOTAL = 20;
+  var QUIZ_MS = 10 * 60 * 1000;
+  var HIST_KEY = 'wordquiz_history';
+
+  function $(id) { return document.getElementById(id); }
+
+  // ---- state ----
+  var state = { view: 'select', level: null, session: null, review: null };
+
+  function showView(name) {
+    ['select', 'ready', 'quiz', 'result', 'review'].forEach(function (v) {
+      $('view-' + v).hidden = (v !== name);
+    });
+    state.view = name;
+  }
+
+  // ---- word normalization ----
+  function normWord(w) {
+    return w.replace(/\s*\(.*?\)\s*/g, '').replace(/\s*=.*$/, '').trim();
+  }
+
+  // ---- question generation ----
+  function poolOf(levelKey) {
+    return (DB[levelKey] || []).slice();
+  }
+
+  function shuffle(arr) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  function generate(levelKey) {
+    var pool = poolOf(levelKey);
+    pool = shuffle(pool);
+    var picked = pool.slice(0, TOTAL);
+    return picked.map(function (entry, idx) {
+      var distractors = [];
+      var used = { '': true };
+      used[entry.m] = true;
+      for (var attempt = 0; attempt < 500 && distractors.length < 2; attempt++) {
+        var di = Math.floor(Math.random() * pool.length);
+        var dm = pool[di].m;
+        if (!used[dm] && dm) {
+          used[dm] = true;
+          distractors.push(dm);
+        }
+      }
+      var options = shuffle([entry.m].concat(distractors));
+      return {
+        word: entry.w,
+        wordClean: normWord(entry.w),
+        meaning: entry.m,
+        phonetic: entry.p || '',
+        options: options,
+        userChoice: null,
+        correct: false
+      };
+    });
+  }
+
+  // ---- timer ----
+  var timerId = null;
+  function startTimer() {
+    var s = state.session;
+    s.startTime = Date.now();
+    s.deadline = s.startTime + QUIZ_MS;
+    tick();
+    timerId = setInterval(tick, 250);
+  }
+  function tick() {
+    var s = state.session;
+    var left = s.deadline - Date.now();
+    if (left <= 0) { left = 0; updateTime(0); finishQuiz(); return; }
+    updateTime(left);
+  }
+  function updateTime(ms) {
+    var sec = Math.ceil(ms / 1000);
+    var m = Math.floor(sec / 60), ss = sec % 60;
+    var el = $('q-time');
+    el.textContent = m + ':' + (ss < 10 ? '0' : '') + ss;
+    el.classList.toggle('warn', ms <= 60000);
+  }
+  function stopTimer() { if (timerId) { clearInterval(timerId); timerId = null; } }
+  function fmtDur(ms) {
+    var sec = Math.round(ms / 1000), m = Math.floor(sec / 60), ss = sec % 60;
+    return m + ':' + (ss < 10 ? '0' : '') + ss;
+  }
+
+  // ---- speech ----
+  function speakWord(text) {
+    if (!window.speechSynthesis) return;
+    speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US';
+    u.rate = 0.85;
+    speechSynthesis.speak(u);
+  }
+
+  // ---- quiz flow ----
+  function startQuiz() {
+    state.session = { level: state.level, questions: generate(state.level), idx: 0 };
+    showView('quiz');
+    startTimer();
+    loadQuizQuestion();
+  }
+  function loadQuizQuestion() {
+    var s = state.session, q = s.questions[s.idx];
+    $('q-word').textContent = q.wordClean || q.word;
+    $('q-phonetic').textContent = q.phonetic || '';
+    $('q-progress').textContent = '第 ' + (s.idx + 1) + ' / ' + TOTAL + ' 题';
+    var optsEl = $('q-options');
+    optsEl.innerHTML = '';
+    q.options.forEach(function (opt) {
+      var btn = document.createElement('button');
+      btn.className = 'opt-btn';
+      btn.textContent = opt;
+      btn.addEventListener('click', function () { submitQuiz(opt); });
+      optsEl.appendChild(btn);
+    });
+    speakWord(q.wordClean || q.word);
+  }
+  function submitQuiz(choice) {
+    var s = state.session, q = s.questions[s.idx];
+    if (q.userChoice !== null) return;
+    q.userChoice = choice;
+    q.correct = (choice === q.meaning);
+    s.idx++;
+    if (s.idx >= TOTAL) finishQuiz();
+    else loadQuizQuestion();
+  }
+  function finishQuiz() {
+    if (state.view !== 'quiz') return;
+    stopTimer();
+    var s = state.session;
+    s.endTime = Date.now();
+    var answered = s.questions.filter(function (q) { return q.userChoice !== null; });
+    var ok = s.questions.filter(function (q) { return q.correct; }).length;
+    var dur = Math.min(s.endTime - s.startTime, QUIZ_MS);
+    $('r-done').textContent = '完成 ' + answered.length + ' / ' + TOTAL;
+    $('r-done').classList.toggle('ok', ok === TOTAL);
+    $('r-ok').textContent = ok;
+    $('r-bad').textContent = answered.length - ok;
+    $('r-time').textContent = fmtDur(dur);
+    var wrong = s.questions.filter(function (q) { return q.userChoice !== null && !q.correct; });
+    state.review = wrong;
+    $('r-review').hidden = wrong.length === 0;
+    saveHistory({ level: s.level, correct: ok, total: TOTAL, durationMs: dur, finishedAt: Date.now() });
+    showView('result');
+  }
+
+  // ---- review flow ----
+  var reviewList = null, reviewIdx = 0;
+  function startReview() {
+    reviewList = state.review.slice();
+    reviewIdx = 0;
+    showView('review');
+    $('rv-fb').textContent = '';
+    loadReviewQuestion();
+  }
+  function loadReviewQuestion() {
+    var q = reviewList[reviewIdx];
+    $('rv-word').textContent = q.wordClean || q.word;
+    $('rv-phonetic').textContent = q.phonetic || '';
+    $('rv-progress').textContent = '订正 ' + (reviewIdx + 1) + ' / ' + reviewList.length;
+    $('rv-fb').textContent = '';
+    var optsEl = $('rv-options');
+    optsEl.innerHTML = '';
+    q.options.forEach(function (opt) {
+      var btn = document.createElement('button');
+      btn.className = 'opt-btn';
+      btn.textContent = opt;
+      btn.addEventListener('click', function () { submitReview(opt); });
+      optsEl.appendChild(btn);
+    });
+    speakWord(q.wordClean || q.word);
+  }
+  function submitReview(choice) {
+    var q = reviewList[reviewIdx];
+    if (choice === q.meaning) {
+      $('rv-fb').textContent = '正确！';
+      $('rv-fb').style.color = 'var(--right)';
+      setTimeout(function () {
+        reviewIdx++;
+        if (reviewIdx >= reviewList.length) { showView('select'); renderSelect(); }
+        else loadReviewQuestion();
+      }, 500);
+    } else {
+      $('rv-fb').textContent = '再想想，正确答案是：' + q.meaning;
+      $('rv-fb').style.color = 'var(--wrong)';
+    }
+  }
+
+  // ---- history ----
+  function loadHistory() {
+    try { return JSON.parse(localStorage.getItem(HIST_KEY) || '[]'); }
+    catch (e) { return null; }
+  }
+  function saveHistory(rec) {
+    var h = loadHistory();
+    if (h === null) return;
+    h.unshift(rec);
+    if (h.length > 20) h = h.slice(0, 20);
+    try { localStorage.setItem(HIST_KEY, JSON.stringify(h)); } catch (e) {}
+  }
+  function clearHistory() {
+    try { localStorage.removeItem(HIST_KEY); } catch (e) {}
+  }
+  function levelShort(key) {
+    for (var i = 0; i < LEVEL_INFO.length; i++) if (LEVEL_INFO[i].key === key) return LEVEL_INFO[i].name;
+    return key;
+  }
+  function fmtDate(ts) {
+    var d = new Date(ts);
+    function p(n) { return (n < 10 ? '0' : '') + n; }
+    return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate());
+  }
+
+  // ---- select view ----
+  function renderSelect() {
+    var box = $('levels');
+    box.innerHTML = '';
+    LEVEL_INFO.forEach(function (info) {
+      var b = document.createElement('button');
+      b.className = 'level-btn';
+      b.innerHTML = info.name + '<span class="n">' + info.desc + ' · ' + info.count + '</span>';
+      b.addEventListener('click', function () { gotoReady(info.key); });
+      box.appendChild(b);
+    });
+
+    var hist = loadHistory();
+    var list = $('hist-list'), clearBtn = $('clear-btn');
+    if (hist === null) { $('hist').hidden = true; return; }
+    $('hist').hidden = false;
+    list.innerHTML = '';
+    if (hist.length === 0) {
+      list.innerHTML = '<div class="hist-empty">还没有记录，完成一次测试后会显示在这里。</div>';
+      clearBtn.hidden = true;
+    } else {
+      hist.slice(0, 5).forEach(function (r) {
+        var row = document.createElement('div');
+        row.className = 'hist-row';
+        row.textContent = '[' + levelShort(r.level) + '] ' + r.correct + '/' + r.total +
+          ' · ' + fmtDur(r.durationMs) + ' · ' + fmtDate(r.finishedAt);
+        list.appendChild(row);
+      });
+      clearBtn.hidden = false;
+    }
+  }
+
+  function gotoReady(key) {
+    state.level = key;
+    var info = LEVEL_INFO.filter(function (i) { return i.key === key; })[0];
+    $('ready-name').textContent = info.name + '（' + info.desc + '）';
+    showView('ready');
+  }
+
+  // ---- wire static buttons ----
+  $('start-btn').addEventListener('click', startQuiz);
+  $('ready-back').addEventListener('click', function () { showView('select'); renderSelect(); });
+  $('r-home').addEventListener('click', function () { showView('select'); renderSelect(); });
+  $('r-review').addEventListener('click', startReview);
+  $('clear-btn').addEventListener('click', function () {
+    if (confirm('确定清除全部历史记录吗？')) { clearHistory(); renderSelect(); }
+  });
+  $('q-speak').addEventListener('click', function () {
+    if (state.session && state.session.questions) {
+      var q = state.session.questions[state.session.idx];
+      speakWord(q.wordClean || q.word);
+    }
+  });
+  $('rv-speak').addEventListener('click', function () {
+    if (reviewList && reviewIdx < reviewList.length) {
+      var q = reviewList[reviewIdx];
+      speakWord(q.wordClean || q.word);
+    }
+  });
+
+  // ---- init ----
+  renderSelect();
+  showView('select');
+
+  // ---- PWA ----
+  if ('serviceWorker' in navigator && location.protocol.indexOf('http') === 0) {
+    navigator.serviceWorker.register('sw.js').catch(function () {});
+  }
+})();
+</script>
+</body>
+</html>
