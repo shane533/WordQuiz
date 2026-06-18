@@ -7,13 +7,13 @@ window.WORD_DB = {
       "w": "a",
       "m": "一个（件……）",
       "p": "/an   /  /",
-      "py": "yi2 ge4 （ jian4 … … ）"
+      "py": "yi1 ge4 （ jian4 … … ）"
     },
     {
       "w": "after",
       "m": "在……以后",
       "p": "/ˈɑːftə/",
-      "py": "zai4 … … hou4 后"
+      "py": "zai4 … … yi3 hou4"
     },
     {
       "w": "afternoon",
@@ -301,7 +301,7 @@ window.WORD_DB = {
       "w": "clean",
       "m": "干净的；打扫",
       "p": "/kliːn/",
-      "py": "gan1 jing4 de ； da3 sao3"
+      "py": "gan4 jing4 de ； da3 sao3"
     },
     {
       "w": "clock",
@@ -625,7 +625,7 @@ window.WORD_DB = {
       "w": "hair",
       "m": "头发",
       "p": "/heə/",
-      "py": "tou2 fa4"
+      "py": "tou2 fa1"
     },
     {
       "w": "hand",
@@ -793,7 +793,7 @@ window.WORD_DB = {
       "w": "long",
       "m": "长的；长久地",
       "p": "/lɒŋ/",
-      "py": "zhang3 de ； chang2 jiu3 di4"
+      "py": "zhang3 de ； zhang3 jiu3 di4"
     },
     {
       "w": "look",
@@ -817,7 +817,7 @@ window.WORD_DB = {
       "w": "make",
       "m": "做，制造；使得",
       "p": "/meɪk/",
-      "py": "zuo4 ， zhi4 zao4 ； shi3 de"
+      "py": "zuo4 ， zhi4 zao4 ； shi3 de2"
     },
     {
       "w": "man (pl. men)",
@@ -907,7 +907,7 @@ window.WORD_DB = {
       "w": "no",
       "m": "不，不是；没有",
       "p": "/nəʊ/",
-      "py": "bu4 ， bu2 shi4 ； mei2 you3"
+      "py": "bu4 ， bu4 shi4 ； mei2 you3"
     },
     {
       "w": "noodle",
@@ -991,13 +991,13 @@ window.WORD_DB = {
       "w": "photo (=photograph)",
       "m": "照片",
       "p": "/ˈfəʊtəʊ / ˈfəʊtəɡrɑːf/",
-      "py": "zhao4 pian1"
+      "py": "zhao4 pian4"
     },
     {
       "w": "picture",
       "m": "图画；照片",
       "p": "/ˈpɪktʃə/",
-      "py": "tu2 hua4 ； zhao4 pian1"
+      "py": "tu2 hua4 ； zhao4 pian4"
     },
     {
       "w": "pig",
@@ -1015,7 +1015,7 @@ window.WORD_DB = {
       "w": "play",
       "m": "玩；打（球）；演奏；戏剧；游戏",
       "p": "/pleɪ/",
-      "py": "wan2 ； da3 （ qiu2 ） ； zou4 ； ； ju4 ； ； xi4 戏"
+      "py": "wan2 ； da3 （ qiu2 ） ； yan3 zou4 ； xi4 ju4 ； you2 xi4"
     },
     {
       "w": "playground",
@@ -1027,7 +1027,7 @@ window.WORD_DB = {
       "w": "please",
       "m": "请；使高兴",
       "p": "/pliːz/",
-      "py": "qing3 ； shi3 gao1 xing4"
+      "py": "qing3 ； shi3 gao1 xing1"
     },
     {
       "w": "rabbit",
@@ -1183,7 +1183,7 @@ window.WORD_DB = {
       "w": "sleep",
       "m": "睡觉",
       "p": "/sliːp/",
-      "py": "shui4 jiao4"
+      "py": "shui4 jue2"
     },
     {
       "w": "small",
@@ -1485,7 +1485,7 @@ window.WORD_DB = {
       "w": "again",
       "m": "再一次，又一次",
       "p": "/əˈɡen/",
-      "py": "zai4 yi2 ci4 ， you4 yi1 ci4"
+      "py": "zai4 yi1 ci4 ， you4 yi1 ci4"
     },
     {
       "w": "ago",
@@ -1569,7 +1569,7 @@ window.WORD_DB = {
       "w": "back",
       "m": "背部；后面；回原处",
       "p": "/bæk/",
-      "py": "bei4 bu4 ； hou4 mian4 ； hui2 yuan2 chu3"
+      "py": "bei4 bu4 ； hou4 mian4 ； hui2 yuan2 chu4"
     },
     {
       "w": "basketball",
@@ -1599,7 +1599,7 @@ window.WORD_DB = {
       "w": "before",
       "m": "在……以前",
       "p": "/bɪˈfɔː/",
-      "py": "zai4 … … qian2 前"
+      "py": "zai4 … … yi3 qian2"
     },
     {
       "w": "begin",
@@ -1611,13 +1611,13 @@ window.WORD_DB = {
       "w": "behind",
       "m": "在……后面",
       "p": "/bɪˈhaɪnd/",
-      "py": "zai4 … … mian4 面"
+      "py": "zai4 … … hou4 mian4"
     },
     {
       "w": "beside",
       "m": "在……旁边",
       "p": "/bɪˈsaɪd/",
-      "py": "zai4 … … bian1 边"
+      "py": "zai4 … … pang2 bian1"
     },
     {
       "w": "best",
@@ -1629,7 +1629,7 @@ window.WORD_DB = {
       "w": "between",
       "m": "在……（两者）之间",
       "p": "/bɪˈtwiːn/",
-      "py": "zai4 … … （ ） zhi1 ） 之 间"
+      "py": "zai4 … … （ liang3 zhe3 ） zhi1 jian1"
     },
     {
       "w": "birthday",
@@ -1695,7 +1695,7 @@ window.WORD_DB = {
       "w": "close",
       "m": "关，闭 /kləʊs/；亲密的；接近的",
       "p": "/kləʊz / kləʊs/",
-      "py": "guan1 ， bi4   / k l ə ʊ s / ； 亲 密 的 ； 接 近 的"
+      "py": "guan1 ， bi4   / k l ə ʊ s / ； qin1 mi4 de ； jie1 jin4 de"
     },
     {
       "w": "cloudy",
@@ -1725,7 +1725,7 @@ window.WORD_DB = {
       "w": "cook",
       "m": "烹调，煮；厨师",
       "p": "/kʊk/",
-      "py": "peng1 tiao2 ， zhu3 ； chu2 shi1"
+      "py": "peng1 diao4 ， zhu3 ； chu2 shi1"
     },
     {
       "w": "dear",
@@ -1797,7 +1797,7 @@ window.WORD_DB = {
       "w": "fan",
       "m": "风扇；迷，爱好者",
       "p": "/fæn/",
-      "py": "feng1 shan4 ； mi2 ， ai4 hao4 zhe3"
+      "py": "feng1 shan4 ； mi2 ， ai4 hao3 zhe3"
     },
     {
       "w": "fast",
@@ -1869,13 +1869,13 @@ window.WORD_DB = {
       "w": "free",
       "m": "免费的；有空的；自由的",
       "p": "/friː/",
-      "py": "mian3 fei4 de ； you3 kong4 de ； zi4 you2 de"
+      "py": "mian3 fei4 de ； you3 kong1 de ； zi4 you2 de"
     },
     {
       "w": "from",
       "m": "来自；从……起",
       "p": "/frɒm; frəm/",
-      "py": "lai2 zi4 ； cong2 … … 起"
+      "py": "lai2 zi4 ； cong2 … … qi3"
     },
     {
       "w": "front",
@@ -1923,13 +1923,13 @@ window.WORD_DB = {
       "w": "half",
       "m": "一半（的）",
       "p": "/hɑːf/",
-      "py": "yi2 ban4 （ de ）"
+      "py": "yi1 ban4 （ de ）"
     },
     {
       "w": "hard",
       "m": "坚硬的（地）；困难的（地）；努力地",
       "p": "/hɑːd/",
-      "py": "jian1 ying4 de （ di4 ） ； nan2 de （ （ ）； ） ； di4 力 地"
+      "py": "jian1 ying4 de （ di4 ） ； kun4 nan2 de （ di4 ） ； nu3 li4 di4"
     },
     {
       "w": "have (has)",
@@ -1977,7 +1977,7 @@ window.WORD_DB = {
       "w": "holiday",
       "m": "假日，假期",
       "p": "/ˈhɒlədeɪ/",
-      "py": "jia4 ri4 ， jia4 qi1"
+      "py": "jia3 ri4 ， jia3 qi1"
     },
     {
       "w": "hometown",
@@ -2037,7 +2037,7 @@ window.WORD_DB = {
       "w": "in",
       "m": "在……里；用；在家，在内",
       "p": "/ɪn/",
-      "py": "zai4 … … ； ； ； ； jia1 ， ， nei4 内"
+      "py": "zai4 … … li3 ； yong4 ； zai4 jia1 ， zai4 nei4"
     },
     {
       "w": "interesting",
@@ -2073,19 +2073,19 @@ window.WORD_DB = {
       "w": "know",
       "m": "知道，了解",
       "p": "/nəʊ/",
-      "py": "zhi1 dao4 ， liao3 jie3"
+      "py": "zhi1 dao4 ， le jie3"
     },
     {
       "w": "last",
       "m": "最后的（地）；上一个；持续",
       "p": "/lɑːst/",
-      "py": "zui4 hou4 de （ di4 ） ； yi2 ge4 ； ； xu4 续"
+      "py": "zui4 hou4 de （ di4 ） ； shang4 yi1 ge4 ； chi2 xu4"
     },
     {
       "w": "late",
       "m": "迟的（地），晚的（地）",
       "p": "/leɪt/",
-      "py": "chi2 de （ di4 ） ， de （ （ ） ）"
+      "py": "chi2 de （ di4 ） ， wan3 de （ di4 ）"
     },
     {
       "w": "learn",
@@ -2205,13 +2205,13 @@ window.WORD_DB = {
       "w": "much",
       "m": "许多（的）；非常",
       "p": "/mʌtʃ/",
-      "py": "xu3 duo1 （ de ） ； chang2 常"
+      "py": "xu3 duo1 （ de ） ； fei1 chang2"
     },
     {
       "w": "music",
       "m": "音乐",
       "p": "/ˈmjuːzɪk/",
-      "py": "yin1 yue4"
+      "py": "yin1 le4"
     },
     {
       "w": "must",
@@ -2235,7 +2235,7 @@ window.WORD_DB = {
       "w": "next",
       "m": "下一个（的）；然后",
       "p": "/nekst/",
-      "py": "xia4 yi2 ge4 （ de ） ； hou4 后"
+      "py": "xia4 yi1 ge4 （ de ） ； ran2 hou4"
     },
     {
       "w": "night",
@@ -2259,19 +2259,19 @@ window.WORD_DB = {
       "w": "o'clock",
       "m": "……点钟",
       "p": "/əˈklɒk/",
-      "py": "… … zhong1 钟"
+      "py": "… … dian3 zhong1"
     },
     {
       "w": "of",
       "m": "……的；关于",
       "p": "/əv; ɒv/",
-      "py": "… … ； ； yu2 于"
+      "py": "… … de ； guan1 yu2"
     },
     {
       "w": "off",
       "m": "离开；从……脱落",
       "p": "/ɒf/",
-      "py": "li2 kai1 ； cong2 … … luo4 落"
+      "py": "li2 kai1 ； cong2 … … tuo1 luo4"
     },
     {
       "w": "often",
@@ -2283,7 +2283,7 @@ window.WORD_DB = {
       "w": "on",
       "m": "在……上；进行中",
       "p": "/ɒn/",
-      "py": "zai4 … … ； ； xing2 zhong1 中"
+      "py": "zai4 … … shang4 ； jin4 xing2 zhong1"
     },
     {
       "w": "out",
@@ -2295,7 +2295,7 @@ window.WORD_DB = {
       "w": "over",
       "m": "在……上方；结束；越过",
       "p": "/ˈəʊvə/",
-      "py": "zai4 … … fang1 ； ； shu4 ； ； guo4 过"
+      "py": "zai4 … … shang4 fang1 ； jie2 shu4 ； yue4 guo4"
     },
     {
       "w": "pair",
@@ -2313,7 +2313,7 @@ window.WORD_DB = {
       "w": "paper",
       "m": "纸；报纸；试卷",
       "p": "/ˈpeɪpə/",
-      "py": "zhi3 ； bao4 zhi3 ； shi4 juan4"
+      "py": "zhi3 ； bao4 zhi3 ； shi4 juan3"
     },
     {
       "w": "parent",
@@ -2361,7 +2361,7 @@ window.WORD_DB = {
       "w": "plant",
       "m": "植物；种植",
       "p": "/plɑːnt/",
-      "py": "zhi2 wu4 ； zhong4 zhi2"
+      "py": "zhi2 wu4 ； zhong3 zhi2"
     },
     {
       "w": "police",
@@ -2403,7 +2403,7 @@ window.WORD_DB = {
       "w": "right",
       "m": "正确的（地）；右边的（地）；右边",
       "p": "/raɪt/",
-      "py": "zheng4 que4 de （ di4 ） ； bian1 de （ （ ）； ） ； 右 边"
+      "py": "zheng4 que4 de （ di4 ） ； you4 bian1 de （ di4 ） ； you4 bian1"
     },
     {
       "w": "safe",
@@ -2481,7 +2481,7 @@ window.WORD_DB = {
       "w": "song",
       "m": "歌曲",
       "p": "/sɒŋ/",
-      "py": "ge1 qu3"
+      "py": "ge1 qu1"
     },
     {
       "w": "space",
@@ -2493,7 +2493,7 @@ window.WORD_DB = {
       "w": "speak",
       "m": "说（某种语言）；讲话",
       "p": "/spiːk/",
-      "py": "shuo1 （ mou3 zhong3 yu3 yan2 ） ； hua4 话"
+      "py": "shuo1 （ mou3 zhong3 yu3 yan2 ） ； jiang3 hua4"
     },
     {
       "w": "sport",
@@ -2505,7 +2505,7 @@ window.WORD_DB = {
       "w": "spring",
       "m": "春天；弹簧；泉水",
       "p": "/sprɪŋ/",
-      "py": "chun1 tian1 ； tan2 huang2 ； quan2 shui3"
+      "py": "chun1 tian1 ； dan4 huang2 ； quan2 shui3"
     },
     {
       "w": "stand",
@@ -2577,7 +2577,7 @@ window.WORD_DB = {
       "w": "sure",
       "m": "确信的（地）；当然",
       "p": "/ʃʊə; ʃɔː/",
-      "py": "que4 xin4 de （ di4 ） ； ran2 然"
+      "py": "que4 xin4 de （ di4 ） ； dang1 ran2"
     },
     {
       "w": "sweep",
@@ -2649,7 +2649,7 @@ window.WORD_DB = {
       "w": "think",
       "m": "想，认为",
       "p": "/θɪŋk/",
-      "py": "xiang3 ， ren4 wei2"
+      "py": "xiang3 ， ren4 wei4"
     },
     {
       "w": "this",
@@ -2727,7 +2727,7 @@ window.WORD_DB = {
       "w": "turn",
       "m": "转动；转弯；变成；轮流",
       "p": "/tɜːn/",
-      "py": "zhuan4 dong4 ； zhuan3 wan1 ； bian4 cheng2 ； lun2 liu2"
+      "py": "zhuan3 dong4 ； zhuan3 wan1 ； bian4 cheng2 ； lun2 liu2"
     },
     {
       "w": "umbrella",
@@ -2739,7 +2739,7 @@ window.WORD_DB = {
       "w": "under",
       "m": "在……下面",
       "p": "/ˈʌndə/",
-      "py": "zai4 … … mian4 面"
+      "py": "zai4 … … xia4 mian4"
     },
     {
       "w": "up",
@@ -2751,7 +2751,7 @@ window.WORD_DB = {
       "w": "use",
       "m": "使用 /juːs/；用途",
       "p": "/juːz / juːs/",
-      "py": "shi3 yong4   / j u ː s / ； 用 途"
+      "py": "shi3 yong4   / j u ː s / ； yong4 tu2"
     },
     {
       "w": "very",
@@ -2841,7 +2841,7 @@ window.WORD_DB = {
       "w": "when",
       "m": "什么时候；当……时",
       "p": "/wen/",
-      "py": "shen2 me shi2 hou4 ； dang1 … … 时"
+      "py": "shen2 me shi2 hou4 ； dang1 … … shi2"
     },
     {
       "w": "where",
@@ -2853,7 +2853,7 @@ window.WORD_DB = {
       "w": "which",
       "m": "哪一个；哪些",
       "p": "/wɪtʃ/",
-      "py": "na3 yi2 ge4 ； nei3 xie1"
+      "py": "na3 yi1 ge4 ； na3 xie1"
     },
     {
       "w": "who",
@@ -2865,7 +2865,7 @@ window.WORD_DB = {
       "w": "whose",
       "m": "谁的",
       "p": "/huːz/",
-      "py": "shei2 de"
+      "py": "shui2 de"
     },
     {
       "w": "why",
@@ -2901,7 +2901,7 @@ window.WORD_DB = {
       "w": "with",
       "m": "和……一起；带有；用",
       "p": "/wɪð/",
-      "py": "he2 … … qi3 ； ； you3 ； ； 用"
+      "py": "he2 … … yi1 qi3 ； dai4 you3 ； yong4"
     },
     {
       "w": "wonderful",
@@ -2954,7 +2954,7 @@ window.WORD_DB = {
     {
       "w": "above",
       "m": "在……上面",
-      "py": "zai4 … … mian4 面"
+      "py": "zai4 … … shang4 mian4"
     },
     {
       "w": "abroad",
@@ -3134,7 +3134,7 @@ window.WORD_DB = {
     {
       "w": "almost",
       "m": "几乎",
-      "py": "ji1 hu1"
+      "py": "ji3 hu1"
     },
     {
       "w": "alone",
@@ -3174,7 +3174,7 @@ window.WORD_DB = {
     {
       "w": "among",
       "m": "在……之中",
-      "py": "zai4 … … zhong1 中"
+      "py": "zai4 … … zhi1 zhong1"
     },
     {
       "w": "ancient",
@@ -3184,7 +3184,7 @@ window.WORD_DB = {
     {
       "w": "another",
       "m": "另一个",
-      "py": "ling4 yi2 ge4"
+      "py": "ling4 yi1 ge4"
     },
     {
       "w": "ant",
@@ -3219,7 +3219,7 @@ window.WORD_DB = {
     {
       "w": "app (=application)",
       "m": "应用程序",
-      "py": "ying4 yong4 cheng2 xu4"
+      "py": "ying1 yong4 cheng2 xu4"
     },
     {
       "w": "appear",
@@ -3244,7 +3244,7 @@ window.WORD_DB = {
     {
       "w": "around",
       "m": "在……周围",
-      "py": "zai4 … … wei2 围"
+      "py": "zai4 … … zhou1 wei2"
     },
     {
       "w": "arrive",
@@ -3264,12 +3264,12 @@ window.WORD_DB = {
     {
       "w": "as",
       "m": "作为；当……时",
-      "py": "zuo4 wei2 ； dang1 … … 时"
+      "py": "zuo4 wei4 ； dang1 … … shi2"
     },
     {
       "w": "asleep",
       "m": "睡着的",
-      "py": "shui4 zhao2 de"
+      "py": "shui4 zhe de"
     },
     {
       "w": "athlete",
@@ -3354,12 +3354,12 @@ window.WORD_DB = {
     {
       "w": "band",
       "m": "乐队；带子",
-      "py": "yue4 dui4 ； dai4 zi"
+      "py": "le4 dui4 ； dai4 zi"
     },
     {
       "w": "bank",
       "m": "银行；河岸",
-      "py": "yin2 hang2 ； he2 an4"
+      "py": "yin2 xing2 ； he2 an4"
     },
     {
       "w": "baseball",
@@ -3404,7 +3404,7 @@ window.WORD_DB = {
     {
       "w": "become",
       "m": "成为",
-      "py": "cheng2 wei2"
+      "py": "cheng2 wei4"
     },
     {
       "w": "bedroom",
@@ -3439,7 +3439,7 @@ window.WORD_DB = {
     {
       "w": "below",
       "m": "在……下面",
-      "py": "zai4 … … mian4 面"
+      "py": "zai4 … … xia4 mian4"
     },
     {
       "w": "belt",
@@ -3479,17 +3479,17 @@ window.WORD_DB = {
     {
       "w": "biscuit",
       "m": "饼干",
-      "py": "bing3 gan1"
+      "py": "bing3 gan4"
     },
     {
       "w": "bit",
       "m": "一点",
-      "py": "yi4 dian3"
+      "py": "yi1 dian3"
     },
     {
       "w": "bleed",
       "m": "流血",
-      "py": "liu2 xie3"
+      "py": "liu2 xue4"
     },
     {
       "w": "blind",
@@ -3599,7 +3599,7 @@ window.WORD_DB = {
     {
       "w": "brush",
       "m": "刷子；刷",
-      "py": "shua1 zi3 ； shua1"
+      "py": "shua1 zi ； shua1"
     },
     {
       "w": "budget",
@@ -3644,7 +3644,7 @@ window.WORD_DB = {
     {
       "w": "cabbage",
       "m": "卷心菜",
-      "py": "juan4 xin1 cai4"
+      "py": "juan3 xin1 cai4"
     },
     {
       "w": "calendar",
@@ -3659,7 +3659,7 @@ window.WORD_DB = {
     {
       "w": "camera",
       "m": "照相机",
-      "py": "zhao4 xiang4 ji1"
+      "py": "zhao4 xiang1 ji1"
     },
     {
       "w": "camp",
@@ -3679,7 +3679,7 @@ window.WORD_DB = {
     {
       "w": "capital",
       "m": "首都；资本",
-      "py": "shou3 du1 ； zi1 ben3"
+      "py": "shou3 dou1 ； zi1 ben3"
     },
     {
       "w": "care",
@@ -3759,12 +3759,12 @@ window.WORD_DB = {
     {
       "w": "challenge",
       "m": "挑战",
-      "py": "tiao3 zhan4"
+      "py": "tiao1 zhan4"
     },
     {
       "w": "champion",
       "m": "冠军",
-      "py": "guan4 jun1"
+      "py": "guan1 jun1"
     },
     {
       "w": "chance",
@@ -3779,7 +3779,7 @@ window.WORD_DB = {
     {
       "w": "character",
       "m": "角色；性格",
-      "py": "jue2 se4 ； xing4 ge2"
+      "py": "jiao3 se4 ； xing4 ge2"
     },
     {
       "w": "characteristic",
@@ -3799,7 +3799,7 @@ window.WORD_DB = {
     {
       "w": "cheap",
       "m": "便宜的",
-      "py": "pian2 yi2 de"
+      "py": "bian4 yi2 de"
     },
     {
       "w": "cheat",
@@ -3984,7 +3984,7 @@ window.WORD_DB = {
     {
       "w": "concert",
       "m": "音乐会",
-      "py": "yin1 yue4 hui4"
+      "py": "yin1 le4 hui4"
     },
     {
       "w": "condition",
@@ -4034,7 +4034,7 @@ window.WORD_DB = {
     {
       "w": "cookie",
       "m": "饼干；曲奇",
-      "py": "bing3 gan1 ； qu1 qi2"
+      "py": "bing3 gan4 ； qu1 qi2"
     },
     {
       "w": "cooperate",
@@ -4084,7 +4084,7 @@ window.WORD_DB = {
     {
       "w": "count",
       "m": "数数；计数",
-      "py": "shuo4 shuo4 ； ji4 shu4"
+      "py": "shu4 shu4 ； ji4 shu4"
     },
     {
       "w": "country",
@@ -4154,7 +4154,7 @@ window.WORD_DB = {
     {
       "w": "curious",
       "m": "好奇的",
-      "py": "hao4 qi2 de"
+      "py": "hao3 qi2 de"
     },
     {
       "w": "customer",
@@ -4204,7 +4204,7 @@ window.WORD_DB = {
     {
       "w": "deal",
       "m": "处理；交易",
-      "py": "chu3 li3 ； jiao1 yi4"
+      "py": "chu4 li3 ； jiao1 yi4"
     },
     {
       "w": "death",
@@ -4289,7 +4289,7 @@ window.WORD_DB = {
     {
       "w": "difference",
       "m": "差异",
-      "py": "cha1 yi4"
+      "py": "cha4 yi4"
     },
     {
       "w": "different",
@@ -4329,7 +4329,7 @@ window.WORD_DB = {
     {
       "w": "disaster",
       "m": "灾难",
-      "py": "zai1 nan4"
+      "py": "zai1 nan2"
     },
     {
       "w": "discover",
@@ -4409,7 +4409,7 @@ window.WORD_DB = {
     {
       "w": "dry",
       "m": "干的；干燥的",
-      "py": "gan4 de ； gan1 zao4 de"
+      "py": "gan4 de ； gan4 zao4 de"
     },
     {
       "w": "dumpling",
@@ -4419,7 +4419,7 @@ window.WORD_DB = {
     {
       "w": "during",
       "m": "在……期间",
-      "py": "zai4 … … jian1 间"
+      "py": "zai4 … … qi1 jian1"
     },
     {
       "w": "duty",
@@ -4464,7 +4464,7 @@ window.WORD_DB = {
     {
       "w": "either",
       "m": "（两者中）任何一个",
-      "py": "（ liang3 zhe3 zhong1 ） ren4 he2 yi2 ge4"
+      "py": "（ liang3 zhe3 zhong1 ） ren4 he2 yi1 ge4"
     },
     {
       "w": "elder",
@@ -4694,7 +4694,7 @@ window.WORD_DB = {
     {
       "w": "fall",
       "m": "落下；秋天",
-      "py": "la4 xia4 ； qiu1 tian1"
+      "py": "luo4 xia4 ； qiu1 tian1"
     },
     {
       "w": "false",
@@ -4849,7 +4849,7 @@ window.WORD_DB = {
     {
       "w": "force",
       "m": "力量；强迫",
-      "py": "li4 liang4 ； qiang3 po4"
+      "py": "li4 liang4 ； qiang2 po4"
     },
     {
       "w": "foreign",
@@ -4874,7 +4874,7 @@ window.WORD_DB = {
     {
       "w": "fork",
       "m": "叉子",
-      "py": "cha1 zi3"
+      "py": "cha1 zi"
     },
     {
       "w": "form",
@@ -4954,7 +4954,7 @@ window.WORD_DB = {
     {
       "w": "general",
       "m": "一般的；将军",
-      "py": "yi4 ban1 de ； jiang1 jun1"
+      "py": "yi1 ban1 de ； jiang1 jun1"
     },
     {
       "w": "gentleman (pl. gentlemen)",
@@ -4969,12 +4969,12 @@ window.WORD_DB = {
     {
       "w": "giraffe",
       "m": "长颈鹿",
-      "py": "chang2 jing3 lu4"
+      "py": "zhang3 jing3 lu4"
     },
     {
       "w": "glad",
       "m": "高兴的",
-      "py": "gao1 xing4 de"
+      "py": "gao1 xing1 de"
     },
     {
       "w": "glove",
@@ -5044,7 +5044,7 @@ window.WORD_DB = {
     {
       "w": "grow",
       "m": "生长；种植",
-      "py": "sheng1 zhang3 ； zhong4 zhi2"
+      "py": "sheng1 zhang3 ； zhong3 zhi2"
     },
     {
       "w": "guard",
@@ -5094,7 +5094,7 @@ window.WORD_DB = {
     {
       "w": "hamburger",
       "m": "汉堡包",
-      "py": "han4 pu4 bao1"
+      "py": "han4 bao3 bao1"
     },
     {
       "w": "handsome",
@@ -5114,7 +5114,7 @@ window.WORD_DB = {
     {
       "w": "hardly",
       "m": "几乎不",
-      "py": "ji1 hu1 bu4"
+      "py": "ji3 hu1 bu4"
     },
     {
       "w": "harm",
@@ -5204,7 +5204,7 @@ window.WORD_DB = {
     {
       "w": "hobby",
       "m": "爱好",
-      "py": "ai4 hao4"
+      "py": "ai4 hao3"
     },
     {
       "w": "hold",
@@ -5369,12 +5369,12 @@ window.WORD_DB = {
     {
       "w": "instrument",
       "m": "乐器；工具",
-      "py": "yue4 qi4 ； gong1 ju4"
+      "py": "le4 qi4 ； gong1 ju4"
     },
     {
       "w": "interest",
       "m": "兴趣；利息",
-      "py": "xing4 qu4 ； li4 xi1"
+      "py": "xing1 qu4 ； li4 xi1"
     },
     {
       "w": "international",
@@ -5419,7 +5419,7 @@ window.WORD_DB = {
     {
       "w": "jacket",
       "m": "夹克衫",
-      "py": "jia2 ke4 shan1"
+      "py": "jia1 ke4 shan1"
     },
     {
       "w": "jeans",
@@ -5459,7 +5459,7 @@ window.WORD_DB = {
     {
       "w": "junior",
       "m": "初级的；年少的",
-      "py": "chu1 ji2 de ； nian2 shao4 de"
+      "py": "chu1 ji2 de ； nian2 shao3 de"
     },
     {
       "w": "just",
@@ -5549,7 +5549,7 @@ window.WORD_DB = {
     {
       "w": "land",
       "m": "土地；着陆",
-      "py": "tu3 di4 ； zhuo2 lu4"
+      "py": "tu3 di4 ； zhe lu4"
     },
     {
       "w": "landscape",
@@ -5919,7 +5919,7 @@ window.WORD_DB = {
     {
       "w": "mine",
       "m": "我的（名词性物主代词）；矿",
-      "py": "wo3 de （ ming2 ci2 xing4 wu4 zhu3 dai4 ci2 ） ； 矿"
+      "py": "wo3 de （ ming2 ci2 xing4 wu4 zhu3 dai4 ci2 ） ； kuang4"
     },
     {
       "w": "mirror",
@@ -6014,7 +6014,7 @@ window.WORD_DB = {
     {
       "w": "nearly",
       "m": "几乎",
-      "py": "ji1 hu1"
+      "py": "ji3 hu1"
     },
     {
       "w": "necessary",
@@ -6079,7 +6079,7 @@ window.WORD_DB = {
     {
       "w": "none",
       "m": "没有一个",
-      "py": "mei2 you3 yi2 ge4"
+      "py": "mei2 you3 yi1 ge4"
     },
     {
       "w": "noon",
@@ -6299,7 +6299,7 @@ window.WORD_DB = {
     {
       "w": "part",
       "m": "部分；角色",
-      "py": "bu4 fen4 ； jue2 se4"
+      "py": "bu4 fen1 ； jiao3 se4"
     },
     {
       "w": "partner",
@@ -6559,7 +6559,7 @@ window.WORD_DB = {
     {
       "w": "post",
       "m": "邮寄；帖子；岗位",
-      "py": "you2 ji4 ； tie3 zi3 ； gang3 wei4"
+      "py": "you2 ji4 ； tie1 zi ； gang3 wei4"
     },
     {
       "w": "postcard",
@@ -6634,7 +6634,7 @@ window.WORD_DB = {
     {
       "w": "pretty",
       "m": "漂亮的；相当",
-      "py": "piao4 liang4 de ； xiang1 dang1"
+      "py": "piao1 liang4 de ； xiang1 dang1"
     },
     {
       "w": "price",
@@ -6654,7 +6654,7 @@ window.WORD_DB = {
     {
       "w": "prince / princess",
       "m": "王子／公主",
-      "py": "wang2 zi3 ／ gong1 zhu3"
+      "py": "wang2 zi ／ gong1 zhu3"
     },
     {
       "w": "print",
@@ -6719,7 +6719,7 @@ window.WORD_DB = {
     {
       "w": "proper",
       "m": "适当的",
-      "py": "shi4 dang4 de"
+      "py": "shi4 dang1 de"
     },
     {
       "w": "protect",
@@ -6769,7 +6769,7 @@ window.WORD_DB = {
     {
       "w": "purpose",
       "m": "目的",
-      "py": "mu4 di4"
+      "py": "mu4 de"
     },
     {
       "w": "push",
@@ -6834,7 +6834,7 @@ window.WORD_DB = {
     {
       "w": "rather",
       "m": "相当；宁愿",
-      "py": "xiang1 dang1 ； ning4 yuan4"
+      "py": "xiang1 dang1 ； ning2 yuan4"
     },
     {
       "w": "reach",
@@ -6949,7 +6949,7 @@ window.WORD_DB = {
     {
       "w": "repeat",
       "m": "重复",
-      "py": "chong2 fu4"
+      "py": "zhong4 fu4"
     },
     {
       "w": "reply",
@@ -6964,7 +6964,7 @@ window.WORD_DB = {
     {
       "w": "require",
       "m": "需要；要求",
-      "py": "xu1 yao4 ； yao1 qiu2"
+      "py": "xu1 yao4 ； yao4 qiu2"
     },
     {
       "w": "research",
@@ -6999,7 +6999,7 @@ window.WORD_DB = {
     {
       "w": "return",
       "m": "返回；归还",
-      "py": "fan3 hui2 ； gui1 huan2"
+      "py": "fan3 hui2 ； gui1 hai2"
     },
     {
       "w": "review",
@@ -7039,7 +7039,7 @@ window.WORD_DB = {
     {
       "w": "rock",
       "m": "岩石；摇滚乐",
-      "py": "yan2 shi2 ； yao2 gun3 yue4"
+      "py": "yan2 shi2 ； yao2 gun3 le4"
     },
     {
       "w": "rocket",
@@ -7049,7 +7049,7 @@ window.WORD_DB = {
     {
       "w": "role",
       "m": "角色；作用",
-      "py": "jue2 se4 ； zuo4 yong4"
+      "py": "jiao3 se4 ； zuo4 yong4"
     },
     {
       "w": "rope",
@@ -7069,7 +7069,7 @@ window.WORD_DB = {
     {
       "w": "row",
       "m": "排；划船",
-      "py": "pai2 ； hua2 chuan2"
+      "py": "pai2 ； hua4 chuan2"
     },
     {
       "w": "rubbish",
@@ -7094,7 +7094,7 @@ window.WORD_DB = {
     {
       "w": "salad",
       "m": "沙拉",
-      "py": "sha1 la4"
+      "py": "sha1 la1"
     },
     {
       "w": "sale",
@@ -7179,7 +7179,7 @@ window.WORD_DB = {
     {
       "w": "seem",
       "m": "似乎",
-      "py": "si4 hu1"
+      "py": "shi4 hu1"
     },
     {
       "w": "seldom",
@@ -7224,7 +7224,7 @@ window.WORD_DB = {
     {
       "w": "set",
       "m": "设置；一套；落下",
-      "py": "she4 zhi4 ； yi1 tao4 ； la4 xia4"
+      "py": "she4 zhi4 ； yi1 tao4 ； luo4 xia4"
     },
     {
       "w": "several",
@@ -7304,7 +7304,7 @@ window.WORD_DB = {
     {
       "w": "sick",
       "m": "生病的；恶心的",
-      "py": "sheng1 bing4 de ； e3 xin1 de"
+      "py": "sheng1 bing4 de ； e4 xin1 de"
     },
     {
       "w": "side",
@@ -7339,7 +7339,7 @@ window.WORD_DB = {
     {
       "w": "similar",
       "m": "相似的",
-      "py": "xiang1 si4 de"
+      "py": "xiang1 shi4 de"
     },
     {
       "w": "simple",
@@ -7514,7 +7514,7 @@ window.WORD_DB = {
     {
       "w": "spare",
       "m": "空闲的；备用的",
-      "py": "kong4 xian2 de ； bei4 yong4 de"
+      "py": "kong1 xian2 de ； bei4 yong4 de"
     },
     {
       "w": "special",
@@ -7624,7 +7624,7 @@ window.WORD_DB = {
     {
       "w": "stone",
       "m": "石头",
-      "py": "shi2 tou"
+      "py": "shi2 tou2"
     },
     {
       "w": "store",
@@ -7714,7 +7714,7 @@ window.WORD_DB = {
     {
       "w": "suppose",
       "m": "假设；认为",
-      "py": "jia3 she4 ； ren4 wei2"
+      "py": "jia3 she4 ； ren4 wei4"
     },
     {
       "w": "surface",
@@ -7729,7 +7729,7 @@ window.WORD_DB = {
     {
       "w": "survey",
       "m": "调查；测量",
-      "py": "diao4 cha2 ； ce4 liang2"
+      "py": "diao4 cha2 ； ce4 liang4"
     },
     {
       "w": "survive",
@@ -7794,7 +7794,7 @@ window.WORD_DB = {
     {
       "w": "teenage",
       "m": "青少年的",
-      "py": "qing1 shao4 nian2 de"
+      "py": "qing1 shao3 nian2 de"
     },
     {
       "w": "temperature",
@@ -7919,7 +7919,7 @@ window.WORD_DB = {
     {
       "w": "together",
       "m": "一起",
-      "py": "yi4 qi3"
+      "py": "yi1 qi3"
     },
     {
       "w": "ton",
@@ -8039,7 +8039,7 @@ window.WORD_DB = {
     {
       "w": "truth",
       "m": "真相",
-      "py": "zhen1 xiang4"
+      "py": "zhen1 xiang1"
     },
     {
       "w": "T-shirt",
@@ -8094,12 +8094,12 @@ window.WORD_DB = {
     {
       "w": "until (till)",
       "m": "直到……为止",
-      "py": "zhi2 dao4 … … zhi3 止"
+      "py": "zhi2 dao4 … … wei4 zhi3"
     },
     {
       "w": "upon",
       "m": "在……上",
-      "py": "zai4 … … 上"
+      "py": "zai4 … … shang4"
     },
     {
       "w": "usual",
@@ -8109,7 +8109,7 @@ window.WORD_DB = {
     {
       "w": "vacation",
       "m": "假期",
-      "py": "jia4 qi1"
+      "py": "jia3 qi1"
     },
     {
       "w": "value",
@@ -8274,7 +8274,7 @@ window.WORD_DB = {
     {
       "w": "while",
       "m": "当……时；一会儿",
-      "py": "dang1 … … ； ； hui4 er 儿"
+      "py": "dang1 … … shi2 ； yi1 hui4 er2"
     },
     {
       "w": "whole",
@@ -8294,7 +8294,7 @@ window.WORD_DB = {
     {
       "w": "wife (pl. wives)",
       "m": "妻子",
-      "py": "qi1 zi3"
+      "py": "qi1 zi"
     },
     {
       "w": "wild",
@@ -8324,7 +8324,7 @@ window.WORD_DB = {
     {
       "w": "within",
       "m": "在……之内",
-      "py": "zai4 … … nei4 内"
+      "py": "zai4 … … zhi1 nei4"
     },
     {
       "w": "without",
@@ -8344,7 +8344,7 @@ window.WORD_DB = {
     {
       "w": "wood",
       "m": "木头；树林",
-      "py": "mu4 tou ； shu4 lin2"
+      "py": "mu4 tou2 ； shu4 lin2"
     },
     {
       "w": "worse",
@@ -8359,7 +8359,7 @@ window.WORD_DB = {
     {
       "w": "worth",
       "m": "值得的",
-      "py": "zhi2 de de"
+      "py": "zhi2 de2 de"
     },
     {
       "w": "would",
