@@ -83,11 +83,22 @@
   .options { display: flex; flex-direction: column; gap: 12px; width: 100%; padding: 0 8px; }
   .opt-btn {
     border: 2px solid var(--line); background: #fff; color: var(--ink);
-    border-radius: 14px; padding: 16px 18px; font-size: 18px; font-weight: 600;
-    cursor: pointer; touch-action: manipulation; text-align: center;
+    border-radius: 14px; padding: 12px 14px; font-size: 18px; font-weight: 600;
+    cursor: pointer; touch-action: manipulation;
     transition: background .08s, border-color .08s;
+    line-height: 1.4; position: relative;
   }
   .opt-btn:active { background: #f5f3ff; border-color: var(--primary); }
+  .opt-text { flex: 1; }
+  .opt-py { display: block; font-size: 13px; font-weight: 400; color: var(--muted); margin-top: 2px; }
+  .opt-speak {
+    position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+    width: 36px; height: 36px; border-radius: 50%; border: none;
+    background: #f3f0ff; font-size: 18px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    touch-action: manipulation; flex-shrink: 0;
+  }
+  .opt-speak:active { background: #e9d5ff; }
 
   /* result */
   .result-box { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
@@ -215,6 +226,51 @@
     return w.replace(/\s*\(.*?\)\s*/g, '').replace(/\s*=.*$/, '').trim();
   }
 
+  // ---- meaning → pinyin lookup ----
+  var PY_MAP = {};
+  (function buildPyMap() {
+    var all = (DB.l1 || []).concat(DB.l2 || [], DB.l3 || []);
+    all.forEach(function (e) { if (e.m && e.py) PY_MAP[e.m] = e.py; });
+  })();
+
+  function renderOption(optText) {
+    var py = PY_MAP[optText] || '';
+    return '<span class="opt-py">' + formatPinyin(py) + '</span>' + optText;
+  }
+
+  // Convert TONE3 (yi1 ge4) → accented pinyin (yī ɡè)
+  function formatPinyin(py) {
+    if (!py) return '';
+    var TONE = {
+      a: ['a','ā','á','ǎ','à'], o: ['o','ō','ó','ǒ','ò'], e: ['e','ē','é','ě','è'],
+      i: ['i','ī','í','ǐ','ì'], u: ['u','ū','ú','ǔ','ù'], 'ü': ['ü','ǖ','ǘ','ǚ','ǜ']
+    };
+    function markSyllable(s) {
+      var m = s.match(/^([a-züv]+)([1-4])$/i);
+      if (!m) return s;
+      var letters = m[1].replace(/v/g, 'ü'), tone = parseInt(m[2], 10);
+      var pos = -1;
+      var idxA = letters.indexOf('a'); if (idxA >= 0) pos = idxA;
+      else { var idxO = letters.indexOf('o'); if (idxO >= 0) pos = idxO;
+      else { var idxE = letters.indexOf('e'); if (idxE >= 0) pos = idxE;
+      else {
+        var iuIdx = letters.indexOf('iu'); if (iuIdx >= 0) pos = iuIdx + 1;
+        else { var uiIdx = letters.indexOf('ui'); if (uiIdx >= 0) pos = uiIdx + 1;
+        else {
+          for (var k = letters.length - 1; k >= 0; k--) {
+            if ('aoeiuü'.indexOf(letters[k]) >= 0) { pos = k; break; }
+          }
+        }}
+      }}}
+      if (pos < 0) return letters;
+      var base = letters[pos];
+      var table = TONE[base];
+      if (!table) return letters;
+      return letters.slice(0, pos) + table[tone] + letters.slice(pos + 1);
+    }
+    return py.split(' ').map(markSyllable).join(' ');
+  }
+
   // ---- question generation ----
   function poolOf(levelKey) {
     return (DB[levelKey] || []).slice();
@@ -295,6 +351,14 @@
     u.rate = 0.85;
     speechSynthesis.speak(u);
   }
+  function speakChinese(text) {
+    if (!window.speechSynthesis) return;
+    speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'zh-CN';
+    u.rate = 0.9;
+    speechSynthesis.speak(u);
+  }
 
   // ---- quiz flow ----
   function startQuiz() {
@@ -313,8 +377,16 @@
     q.options.forEach(function (opt) {
       var btn = document.createElement('button');
       btn.className = 'opt-btn';
-      btn.textContent = opt;
-      btn.addEventListener('click', function () { submitQuiz(opt); });
+      btn.innerHTML = '<span class="opt-text">' + renderOption(opt) + '</span>'
+        + '<span class="opt-speak">🔊</span>';
+      btn.addEventListener('click', function (e) {
+        if (e.target.closest('.opt-speak')) {
+          e.stopPropagation();
+          speakChinese(opt);
+          return;
+        }
+        submitQuiz(opt);
+      });
       optsEl.appendChild(btn);
     });
     speakWord(q.wordClean || q.word);
@@ -368,8 +440,16 @@
     q.options.forEach(function (opt) {
       var btn = document.createElement('button');
       btn.className = 'opt-btn';
-      btn.textContent = opt;
-      btn.addEventListener('click', function () { submitReview(opt); });
+      btn.innerHTML = '<span class="opt-text">' + renderOption(opt) + '</span>'
+        + '<span class="opt-speak">🔊</span>';
+      btn.addEventListener('click', function (e) {
+        if (e.target.closest('.opt-speak')) {
+          e.stopPropagation();
+          speakChinese(opt);
+          return;
+        }
+        submitReview(opt);
+      });
       optsEl.appendChild(btn);
     });
     speakWord(q.wordClean || q.word);
